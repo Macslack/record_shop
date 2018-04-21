@@ -10,5 +10,4 @@ class TestArtist < MiniTest::Test
   def test_get_artist_name__expecting_name()
     assert_equal('name', @artist.name)
   end
-
 end
