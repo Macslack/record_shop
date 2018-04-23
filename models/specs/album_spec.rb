@@ -19,7 +19,8 @@ class TestAlbum < MiniTest::Test
       "name" => "Lo Moon",
       "quantity" => "50"
       })
-
+#add tests for bad input negitive Quantity
+#blank name etc
 
 
   end

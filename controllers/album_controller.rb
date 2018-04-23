@@ -19,6 +19,10 @@ end
 #create
 post "/albums/new" do
   album = Album.new(params)
+  #check to user input and put error mesesage when not positive integer or album name is empty
+  #write good, specific error messages
+  #check for duplicates 
+
   album.save()
   redirect to "/albums"
 end

@@ -22,6 +22,20 @@ end
 #create
 post "/artists/new" do
   artist = Artist.new(params)
+  #no blank names/ check for duplicates
+  #good error messages specific
   artist.save()
   redirect to "/artists"
+end
+
+#destory
+post "/artists/:id/delete" do
+  order = Artist.find(params[:id])
+  order.delete()
+  redirect to "/artists"
+end
+#edit
+get "/artists/:id/edit" do
+  @artist = Artist.new(params)
+  @artist.update
 end
