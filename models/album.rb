@@ -42,4 +42,14 @@ class Album
     sql = "DELETE FROM albums"
     SqlRunner.run(sql)
   end
+
+  def stock_level()
+    if @quantity <= 15
+      return "Low"
+    elsif @quantity > 15 && @quantity < 30
+      return "Medium"
+    else @quantity >= 30
+      return "High"
+    end
+  end
 end

@@ -47,3 +47,7 @@ album3 = Album.new({
   })
 
 album3.save()
+
+# binding.pry
+
+nil
