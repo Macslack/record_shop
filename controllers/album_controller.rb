@@ -1,14 +1,17 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/album.rb')
+
 #index
 get '/albums' do
   @albums = Album.all()
   erb(:"albums/index")
 end
+
 #new
 get '/albums/new' do
   @albums = Album.all()
+  @artists = Artist.all()
   erb(:"albums/new")
 end
 
