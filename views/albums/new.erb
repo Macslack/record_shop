@@ -1,0 +1,19 @@
+<h1>New albums</h1>
+
+<form action="/albums/new" method="post">
+  <label for="Name">Name:</label>
+  <input type="text" id="name"  name="name">
+
+  <label for="Quantity">Quantity</label>
+  <input type="number" id="quantity" name="quantity" value="1">
+
+  <label for="Album">Album</label>
+  <select name="artist_id" id="artist_id">
+    <% @albums.each do |album| %>
+  <option value="<%= album.id %>"><%=album.name%></option>
+    <% end %>
+  </select>
+
+
+  <input type="submit" value="New Album">
+</form>
