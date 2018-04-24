@@ -38,7 +38,7 @@ end
 #edit
 get "/artists/:id/edit" do
   @artist = Artist.find(params[:id])
-  erb(:edit)
+  erb(:"artists/edit")
 end
 
 #update
