@@ -27,7 +27,9 @@ artist3.save()
 album1 = Album.new({
   "name" => "Music has the right to children",
   "quantity" => "10",
-  "artist_id" => artist1.id
+  "artist_id" => artist1.id,
+  "buy_price" => "10",
+  "sell_price" => "20"
   })
 
 album1.save()
@@ -35,7 +37,9 @@ album1.save()
 album2 = Album.new({
   "name" => "Grinderman 2",
   "quantity" => "20",
-  "artist_id" => artist2.id
+  "artist_id" => artist2.id,
+  "buy_price" => "20",
+  "sell_price" => "30"
   })
 
 album2.save()
@@ -43,7 +47,9 @@ album2.save()
 album3 = Album.new({
   "name" => "Welcome to sky valley",
   "quantity" => "30",
-  "artist_id" => artist3.id
+  "artist_id" => artist3.id,
+  "buy_price" => "30",
+  "sell_price" => "40"
   })
 
 album3.save()
