@@ -28,14 +28,22 @@ post "/artists/new" do
   redirect to "/artists"
 end
 
-#destory
+#destroy
 post "/artists/:id/delete" do
-  order = Artist.find(params[:id])
-  order.delete()
+  artist = Artist.find(params[:id])
+  artist.destroy()
   redirect to "/artists"
 end
+
 #edit
 get "/artists/:id/edit" do
+  @artist = Artist.find(params[:id])
+  erb(:edit)
+end
+
+#update
+post "/artist/:id/edit" do
   @artist = Artist.new(params)
   @artist.update
+  redirect to "/artists"
 end

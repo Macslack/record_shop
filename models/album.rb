@@ -53,10 +53,26 @@ class Album
     end
   end
 
-  def self.destory(id)
+  def destroy()
     sql = "DELETE FROM albums WHERE id = $1"
-    values = [id]
+    values = [@id]
     SqlRunner.run(sql, values)
   end
-  
+
+  def update()
+    sql = "UDATE albums
+    SET
+    (
+      name,
+      quantity,
+      artist_id
+    ) =
+    (
+      $1, $2, $3
+    )
+    WHERE id = $4"
+    values = [@name, @quantity, @artist_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
 end
