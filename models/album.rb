@@ -1,11 +1,13 @@
 require_relative( '../db/sql_runner' )
 class Album
-  attr_reader(:name, :quantity, :id, :artist_id)
+  attr_reader(:name, :quantity, :id, :artist_id, :buy_price, :sell_price)
   def initialize(options)
     @name = options['name']
     @quantity = options['quantity'].to_i
     @id = options['id'].to_i if options['id']
     @artist_id = options['artist_id'].to_i
+    @buy_price = options['buy_price'].to_i
+    @sell_price = options['sell_price'].to_i
   end
 
   def save()
@@ -13,14 +15,16 @@ class Album
     (
       name,
       quantity,
-      artist_id
+      artist_id,
+      buy_price,
+      sell_price
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2, $3, $4, $5
     )
     RETURNING id"
-    values = [@name, @quantity, @artist_id]
+    values = [@name, @quantity, @artist_id, @buy_price, @sell_price]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -65,13 +69,15 @@ class Album
     (
       name,
       quantity,
-      artist_id
+      artist_id,
+      buy_price,
+      sell_price
     ) =
     (
-      $1, $2, $3
+      $1, $2, $3, $4, $5
     )
-    WHERE id = $4"
-    values = [@name, @quantity, @artist_id, @id]
+    WHERE id = $6"
+    values = [@name, @quantity, @artist_id, @buy_price, @sell_price, @id]
     SqlRunner.run(sql, values)
   end
 
