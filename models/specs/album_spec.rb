@@ -9,7 +9,9 @@ class TestAlbum < MiniTest::Test
       "name" => "Vengaboys",
       "quantity" => "10",
       "buy_price" => "15",
-      "sell_price" => "20"
+      "sell_price" => "20",
+      "url" => "www.test.com",
+      "genre" => "test"
       })
 
     @album2 = Album.new({
@@ -61,5 +63,13 @@ class TestAlbum < MiniTest::Test
 
   def test_get_markup_price_expecting_5
     assert_equal(5,@album.markup_price)
+  end
+
+  def test_get_album_url_expecting_wwwtestcom
+    assert_equal("www.test.com", @album.url)
+  end
+
+  def test_get_album_genre_expecting_test
+    assert_equal("test", @album.genre)
   end
 end
