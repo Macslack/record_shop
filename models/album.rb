@@ -68,7 +68,7 @@ class Album
   end
 
   def update()
-    sql = "UDATE albums
+    sql = "UPDATE albums
     SET
     (
       name,

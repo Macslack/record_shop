@@ -1,6 +1,6 @@
 <h1>Edit artists</h1>
 
-<form action="/artist/:id/edit" method="post">
+<form action="/artists/<%= @artist.id %>/edit" method="post">
 
   <label for="Name">Name:</label>
   <input type="text" id="name" name="name" value="<%= @artist.name %>" required=true>

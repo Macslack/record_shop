@@ -50,7 +50,7 @@ end
 
 #update
 post '/albums/:id/edit' do
-  @album = Album.new(parmas)
-  @albums.update
+  @album = Album.new(params)
+  @album.update
   redirect to "/albums"
 end

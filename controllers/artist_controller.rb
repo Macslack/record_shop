@@ -1,5 +1,6 @@
 require('sinatra')
 require('sinatra/contrib/all')
+require('pry-byebug')
 require_relative('../models/artist.rb')
 #index
 get '/artists' do
@@ -42,8 +43,9 @@ get "/artists/:id/edit" do
 end
 
 #update
-post "/artist/:id/edit" do
+post "/artists/:id/edit" do
   @artist = Artist.new(params)
+  # binding.pry
   @artist.update
   redirect to "/artists"
 end

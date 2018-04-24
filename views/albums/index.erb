@@ -4,14 +4,20 @@
   <tr>
     <th>Name</th>
     <th></th>
+    <th>Stock level</th>
+    <th></th>
     <th>Quantity</th>
+    <th></th>
+    <th>Genre</th>
   </tr>
   <% for album in @albums %>
   <tr>
     <td><a href="/albums/<%= album.id %>"><%= album.name %></a></td>
     <td></td>
     <td><%= album.stock_level %></td>
+    <td></td>
     <td><%= album.quantity %></td>
+    <td></td>
     <td><%= album.genre %></td>
   </tr>
   <%end%>
