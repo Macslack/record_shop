@@ -1,5 +1,22 @@
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Special Elite', cursive;
-  margin: 0px;
-  padding: 0px;
+
+body {
+    background-color: #fefbd8;
+}
+
+h1 {
+    background-color: #80ced6;
+}
+
+div {
+    background-color: #d5f4e6;
+}
+
+span {
+    background-color: #f18973;
+}
+table {
+    background-color: #f18973;
+}
+nav {
+    background-color: #f18973
 }
