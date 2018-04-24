@@ -2,6 +2,10 @@
 
 <p>Quantity: <%= @albums.quantity %></p>
 
+<p>Buy price <%= @albums.buy_price %></p>
+
+<p>Sell price <%= @albums.sell_price %></p>
+
 <p>
   <form action="/albums/<%= @albums.id %>/delete" method="POST">
     <input type="submit" value="delete" />

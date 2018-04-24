@@ -15,14 +15,29 @@
   <tr>
     <th>Name</th>
     <th></th>
+    <th>Stock level</th>
+    <th></th>
     <th>Quantity</th>
+    <th></th>
+    <th>Buy price</th>
+    <th></th>
+    <th>Sell price</th>
+    <th></th>
+    <th>Product markup</th>
   </tr>
   <% for album in @albums %>
   <tr>
     <td><a href="/albums/<%= album.id %>"><%= album.name %></a></td>
     <td></td>
     <td><%= album.stock_level %></td>
+    <td></td>
     <td><%= album.quantity %></td>
+    <td></td>
+    <td><%= album.buy_price %></td>
+    <td></td>
+    <td><%= album.sell_price %></td>
+    <td></td>
+    <td><%= album.markup_price %></td>
   </tr>
   <%end%>
 </table>

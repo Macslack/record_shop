@@ -58,4 +58,8 @@ class TestAlbum < MiniTest::Test
   def test_get_album_sell_price_expecting_20
     assert_equal(20, @album.sell_price)
   end
+
+  def test_get_markup_price_expecting_5
+    assert_equal(5,@album.markup_price)
+  end
 end

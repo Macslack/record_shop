@@ -81,4 +81,8 @@ class Album
     SqlRunner.run(sql, values)
   end
 
+  def markup_price()
+    return @sell_price - @buy_price
+  end
+
 end
