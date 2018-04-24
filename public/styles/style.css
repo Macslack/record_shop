@@ -1,22 +1,29 @@
 
 body {
     background-color: #fefbd8;
+    font-family: sans-serif;
 }
 
 h1 {
     background-color: #80ced6;
+    font-family: sans-serif;
 }
 
 div {
     background-color: #d5f4e6;
+      font-family: sans-serif;
 }
 
 span {
     background-color: #f18973;
+      font-family: sans-serif;
 }
 table {
     background-color: #f18973;
+      font-family: sans-serif;
 }
 nav {
-    background-color: #f18973
+    background-color: #f18973;
+      font-family: sans-serif;
+      font-size: 20px;
 }

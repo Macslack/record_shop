@@ -1,6 +1,6 @@
 require_relative( '../db/sql_runner' )
 class Album
-  attr_reader(:name, :quantity, :id, :artist_id, :buy_price, :sell_price)
+  attr_reader(:name, :quantity, :id, :artist_id, :buy_price, :sell_price, :url, :genre)
   def initialize(options)
     @name = options['name']
     @quantity = options['quantity'].to_i
@@ -8,6 +8,8 @@ class Album
     @artist_id = options['artist_id'].to_i
     @buy_price = options['buy_price'].to_i
     @sell_price = options['sell_price'].to_i
+    @url = options['url']
+    @genre = options['genre']
   end
 
   def save()
@@ -17,14 +19,16 @@ class Album
       quantity,
       artist_id,
       buy_price,
-      sell_price
+      sell_price,
+      url,
+      genre
     )
     VALUES
     (
-      $1, $2, $3, $4, $5
+      $1, $2, $3, $4, $5, $6, $7
     )
     RETURNING id"
-    values = [@name, @quantity, @artist_id, @buy_price, @sell_price]
+    values = [@name, @quantity, @artist_id, @buy_price, @sell_price, @url, @genre]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -71,13 +75,15 @@ class Album
       quantity,
       artist_id,
       buy_price,
-      sell_price
+      sell_price,
+      url,
+      genre
     ) =
     (
-      $1, $2, $3, $4, $5
+      $1, $2, $3, $4, $5, $6, $7
     )
-    WHERE id = $6"
-    values = [@name, @quantity, @artist_id, @buy_price, @sell_price, @id]
+    WHERE id = $8"
+    values = [@name, @quantity, @artist_id, @buy_price, @sell_price, @url, @genre, @id]
     SqlRunner.run(sql, values)
   end
 

@@ -6,6 +6,10 @@
 
 <p>Sell price <%= @albums.sell_price %></p>
 
+<p>Genre <%= @albums.genre %></p>
+
+<img src= <%= @albums.url %> alt="">
+
 <p>
   <form action="/albums/<%= @albums.id %>/delete" method="POST">
     <input type="submit" value="delete" />

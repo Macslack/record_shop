@@ -13,6 +13,14 @@
   <label for="Buy price">Buy price</label>
   <input type="number" name="buy_price" value="<%= @album.buy_price %>" min="1" required=true>
 
+
+  <label for="URL">URL</label>
+  <input type="text" id="url" name="url" value="<%= @album.url %>">
+
+  <label for="genre">genre</label>
+  <input type="text" name="genre" value="<%= @album.genre %>">
+
+
   <label for="Artist">Artist</label>
   <select name="artist_id" id="Artist">
     <% @artists.each do |artist| %>
@@ -20,5 +28,5 @@
     <% end %>
   </select>
 
-  <input type="submit" value="New Album">
+  <input type="submit" value="Edit Album">
 </form>
